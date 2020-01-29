@@ -8,6 +8,7 @@ public class Cat extends Animal
     {
         this.numLives = lives;
     }
+
     public int getNumLives()
     {
         return numLives;
@@ -16,5 +17,19 @@ public class Cat extends Animal
     public void speak()
     {
         System.out.println("Meow!");
+    }
+
+    
+    public void kill()
+    {
+        if (this.numLives>0)
+        {
+            this.numLives--;
+            System.out.println("Ouch!");
+        }
+        else if (this.numLives==0)
+        {
+            System.out.println("Dead");
+        }
     }
 }
