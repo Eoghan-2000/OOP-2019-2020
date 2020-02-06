@@ -6,10 +6,18 @@ public class Main
     public void BugZap()
 	{
 		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new HelloProcessing());
+    }
+    
+    public void bugZap()
+	{
+		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new BugZap());
 	}
+    
     public static void main(String[] arg)
     {
+        /*
         System.out.println("Hello world!");
 
         Animal misty = new Dog(); // Polymorphism
@@ -18,9 +26,10 @@ public class Main
         misty.speak();  
         Cat topcat = new Cat();
         topcat.speak();
+        */
 
         Main main = new Main();
-		main.BugZap();
+		main.bugZap();
         
     }
 }
