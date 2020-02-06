@@ -31,8 +31,6 @@ public class BugZap extends PApplet
 	float playerSpeed = 5;
 	float playerWidth = 40;
 	float halfPlayerWidth = playerWidth / 2;
-	
-
 	float bugX, bugY, bugWidth = 30;
 	float halfBugWidth = bugWidth / 2;
 
@@ -45,7 +43,7 @@ public class BugZap extends PApplet
 
 	void resetBug()
 	{
-		bugX = random(halfBugWidth, width - halfBugWidth);
+		bugX = 0;
 		bugY = 50;
 	}
 
@@ -115,20 +113,12 @@ public class BugZap extends PApplet
 
 	void moveBug()
 	{
-		if ((frameCount % 60) == 0)
-		{
-			bugX += random(-5, +5);
-			if (bugX < halfBugWidth )
-			{
-			  bugX = halfBugWidth;
-			}
-			
-			if (bugX + halfBugWidth > width)
-			{
-			  bugX = width - halfBugWidth;
-			}
-			bugY ++;
-		}
+            if(bugX == width)
+            {
+                resetBug();
+            }
+            
+            bugX += 0.5;
 	}
 
 	public void draw()
