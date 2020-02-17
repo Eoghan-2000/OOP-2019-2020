@@ -14,81 +14,82 @@ public class Loops extends PApplet
 		colorMode(HSB,130);
 	}
 
+	public void loops1()
+	{
+		stroke(255);
+		int numLines = (int) (30 * (mouseX / (float) width)) ;
+		float gap = width / (float) numLines;
+		for(int i = 0 ; i <= numLines ; i ++)
+		{
+			float x = i * gap;
+			line(x, 0, width - x, height);
+			line(0, x, width, height -x);
+		}
+	}
+
+	float offset = 0;
+
+	public void loops2()
+	{
+		int numCircles  = (int) (20 * (mouseX / (float) width)) ;
+		
+		float w = width / (float) numCircles;
+		float radius = w / 2.0f;
+		colorMode(HSB);
+		float cGap = 255 / (float) (numCircles * numCircles);
+		noStroke();
+
+		for(int j = 0 ; j < numCircles ; j ++)
+		{		
+			for(int i = 0 ; i < numCircles ; i ++)
+			{
+				float x = radius + (i * w);
+				float y = radius + (j * w);
+				float c = (cGap * i * j + offset) % 255; 
+				fill(c, 255, 255);
+				ellipse(x, y, w, w);
+			}
+		}
+		offset += mouseY / 250.0f;
+	}
+
+	public void loops3()
+	{
+		float gap = width * 0.1f;
+		float halfGap = gap / 2.0f;
+		colorMode(RGB);
+		stroke(0, 255, 0);
+		textAlign(CENTER, CENTER);
+		for(int i = -5 ; i <=5 ; i ++)
+		{
+			float x = map(i, -5, 5, gap, width -gap);				
+			line(x, gap, x, height - gap);
+			line(gap, x, width - gap, x);
+			fill(255);
+			text(i, x, halfGap);
+			text(i, halfGap, x);
+			
+		}
+	}
+
 	
 	public void keyPressed()
 	{
-
+		if (key == ' ')
+		{
+			
+		}
 	}	
 
 
 	public void draw()
 	{	
-		// background(255);
-		
-		// int i =0; 
-		// while(i<10)
-		// {
-		// 	i++;
-		// }
-		// stroke(0);
-		// for(int x=0;x<440;x += 10)
-		// {
-		// 	line(x,0,220,220);
-		// }
-		// for(int y=0;y<440;y += 10)
-		// {
-		// 	line(440,y,220,220);
-		// }
-		// for(int x2=440;x2>0;x2 -= 10)
-		// {
-		// 	line(x2,440,220,220);
-		// }
-		// for(int y2=440;y2>0;y2 -= 10)
-		// {
-		// 	line(0,y2,220,220);
-		// }
+		background(0);		
+		colorMode(HSB);
+		//loops1();
 
+		loops2();
 
-
-		noStroke();
-			int y;
-			int x;
-			int w=40;
-			float h=0;
-		for(x=20;x<400;x+=40)
-		{
-			
-			for(y=20;y<400;y+=40)
-			{
-				// if(h==100)
-				// {
-				// 	h=0;
-				// }
-				fill(h,130,130);
-				ellipse(x,y,w,w);
-				h+=5;
-			}
-			h-=45;
-		}
-		// int m=0;
-		// for(x=0;x<440;x+=40)
-		// {
-		// 	for(y=0;y<440;y+=40)
-		// 	{
-		// 		if(m==0)
-		// 		{
-		// 			fill(0,0,153);
-		// 			rect(x, y, h, h);
-		// 			m=1;
-		// 		}
-		// 		else if(m==1)
-		// 		{
-		// 			fill(0,102,204);
-		// 			rect(x, y, h, h);
-		// 			m=0;
-		// 		}
-		// 	}
-		// }
-		
+		//loops3();
 	}
 }
