@@ -9,11 +9,11 @@ public class Main
         processing.core.PApplet.runSketch( a, new Arrays());
     }
 
-    public void helloProcessing()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new HelloProcessing());
-    }
+    // public void helloProcessing()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new HelloProcessing());
+    // }
 
     public void loops()
     {
@@ -21,17 +21,17 @@ public class Main
         processing.core.PApplet.runSketch( a, new Loops());
     }
     
-    public void bugZap()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new BugZap());
-    }
+    // public void bugZap()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new BugZap());
+    // }
     
-    public void airSeaBattle()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new AirSeaBattle());
-    }
+    // public void airSeaBattle()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new AirSeaBattle());
+    // }
     
     public void dogsCats()
     {
