@@ -1,8 +1,9 @@
 package ie.tudublin;
 
 import java.util.Arrays; 
-import java.util.Collections; 
+import java.util.Collections;
 
+import javafx.scene.text.TextAlignment;
 import processing.core.PApplet;
 
 public class ArraysExample extends PApplet
@@ -75,7 +76,56 @@ public class ArraysExample extends PApplet
 			rect(x, height, w, -rainFall[i]);
 		}
 	}
+	void drawPieChart()
+	{
+		float centre = width/2;
+		float lastAngle=0;
+		float[] angles= new float[rainFall.length];
+		for (int i=0;i<rainFall.length;i++)
+		{
+			angles[i] = (rainFall[i]/100)*(360);
+		}
+		for(int y=0;y<rainFall.length;y++)
+		{
+			fill(255-(y+10));
+			arc(centre,centre,50,50,lastAngle,lastAngle+(angles[y]*DEG_TO_RAD));
+			lastAngle += radians(angles[y]);
+		}
+	}
 
+	void drawLineGraph()
+	{
+		float border = width * 0.1f;
+		stroke(255);
+		textAlign(CENTER, CENTER);
+		line(border,border,border,height-border);
+		for(int ya= 0; ya<=150; ya+=10)
+		{
+			float y = map(ya,0,150,height-border,border);
+			line(border,y,border-5,y);
+			text(ya,border/2,y);
+		}
+		line(border,height-border,width -border,height-border);
+		for(int i =0;i<months.length;i++)
+		{
+			float x = map(i,0,months.length -1, border, width-border);
+			line(x,height-border,x, height-(border +5));
+			text(months[i],x,height-(border/2));
+		}
+
+		for(int i=1;i<months.length;i++)
+		{
+			
+			float x1=map(i-1,0,months.length-1,border, width-border);
+			float x2=map(i,0,months.length-1,border, width-border);
+
+			float y2=map(rainFall[i],0,150,height-border,border);
+			float y1=map(rainFall[i-1],0,150,height-border,border);
+
+			line(x1, y1, x2, y2);
+			
+		}
+	}
 	public void keyPressed()
 	{
 		if (key == ' ')
@@ -89,6 +139,8 @@ public class ArraysExample extends PApplet
 		background(0);		
 		colorMode(HSB);	
 
-		drawBarChart();
+		// drawBarChart();
+		// drawLineGraph();
+		drawPieChart();
 	}
 }
