@@ -9,11 +9,11 @@ public class Main
         processing.core.PApplet.runSketch( a, new ArraysExample());
     }
 
-    // public void helloProcessing()
-	// {
-	// 	String[] a = {"MAIN"};
-    //     processing.core.PApplet.runSketch( a, new HelloProcessing());
-    // }
+    public void helloProcessing()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new HelloProcessing());
+    }
 
     public void loops()
     {
@@ -21,17 +21,29 @@ public class Main
         processing.core.PApplet.runSketch( a, new Loops());
     }
     
-    // public void bugZap()
-	// {
-	// 	String[] a = {"MAIN"};
-    //     processing.core.PApplet.runSketch( a, new BugZap());
-    // }
+    public void bugZap()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new BugZap());
+    }
     
-    // public void airSeaBattle()
-	// {
-	// 	String[] a = {"MAIN"};
-    //     processing.core.PApplet.runSketch( a, new AirSeaBattle());
-    // }
+    public void sound1()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Sound1());
+    }
+
+    public void sound2()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Sound2());
+    }
+
+    public void airSeaBattle()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new AirSeaBattle());
+    }
 
     public void soundMandala()
     {
@@ -81,6 +93,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-		main.soundMandala();        
+		main.sound2();        
     }
 }
