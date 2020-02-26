@@ -134,13 +134,49 @@ public class ArraysExample extends PApplet
 		}
 	}	
 
+	// void drawLineGraph()
+	// {
+	// 	float border = width * 0.1f;
+
+	// 	textAlign(CENTER, CENTER);
+	// 	fill(255);
+	// 	line(border, border, border, height - border);
+	// 	for(int ya = 0 ; ya <= 150 ; ya += 10)
+	// 	{
+	// 		float y = map(ya, 0, 150, height - border, border);
+	// 		line(border, y, border - 5, y);
+	// 		text(ya, border / 2, y);
+	// 	}
+
+	// 	line(border, height - border, width - border, height - border);
+	// 	for(int i = 0 ; i < months.length ; i ++)
+	// 	{
+	// 		float x = map(i, 0, months.length - 1, border, width - border);
+	// 		line(x, height - border, x, height - (border + 5));
+	// 		text(months[i], x, height - (border / 2));
+	// 	}
+
+	// 	for(int i = 0 ; i < rainFall.length - 1 ; i ++)
+	// 	{
+	// 		float x1 = map(i, 0, months.length - 1, border, width - border);
+	// 		float x2 = map(i + 1, 0, months.length - 1, border, width - border);
+			
+	// 		float y1 = map(rainFall[i], 0, 150, height - border, border);
+	// 		float y2 = map(rainFall[i + 1], 0, 150, height - border, border);
+
+	// 		line(x1, y1, x2, y2);
+	// 	}
+	// }
+	
+
 	public void draw()
 	{	
 		background(0);		
 		colorMode(HSB);	
 
-		// drawBarChart();
-		// drawLineGraph();
+		//drawBarChart();
+		//drawLineGraph();
 		drawPieChart();
+		stroke(255);
 	}
 }
